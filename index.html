@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pocket_Education</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="assets/js/jquery-3.3.1.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/bootstrap.bundle.js"></script>
+</head>
+<body>
+        
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-justified" style="box-shadow: 0 0 8px #b2a9a9;">
+        <a class="navbar-brand nav-item text-left" href="#">Pocket<b style="color: #7ebc59">Education</b></a>
+        <a class="nav-item" href="#"></a>
+        <a class="navbar-brand nav-item text-center" href="#" style="background: #7ebc59;color: #fff;margin:0" data-toggle="modal" data-target="#newDataModal">Add New Block</a>
+      </nav>
+
+<!-- Modal -->
+<div class="modal fade left" id="newDataModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content container">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">New Block</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="return addNewBlock()">
+          <div class="form-group">
+            <label for="formGroupExampleInput">Block ID <b style="color: red">*</b> </label>
+            <input type="text" class="form-control" id="idInput" placeholder="Enter Block Id" required>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Color<b style="color: red">*</b> </label>
+            <input type="text" class="form-control" id="colorInput" placeholder="Enter Color" required>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Quantity <b style="color: red">*</b> </label>
+            <input type="number" class="form-control" id="quantityInput" placeholder="Enter Quantity" required>
+          </div>
+       
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn"> Save</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Tbale -->
+    <div class="container space">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-8">
+              <span style="font-size: large;
+              color:#7ebc59 ;">Dashboard</span>
+          </div>
+          <div class="col-md-4">
+              <form >
+                  <input id="inputSearch" class="form-control mr-sm-2 text-center" type="search" placeholder="Search" aria-label="Search" style="border-radius: 1rem">
+                </form>
+          </div>
+        </div>
+      </div>
+    <table class="table table-bordered space" id="blockTable">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">BLOCKID</th>
+          <th scope="col">COLOR</th>
+          <th scope="col">QUANTITY</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody id="tb">
+       
+      </tbody>
+    </table>
+  </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+<script src="assets/js/app.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyDU3nPf3h5Tw0UL4_jKgsZn-IZKqiQYqcU",
+    authDomain: "pocket-89ca9.firebaseapp.com",
+    databaseURL: "https://pocket-89ca9.firebaseio.com",
+    projectId: "pocket-89ca9",
+    storageBucket: "pocket-89ca9.appspot.com",
+    messagingSenderId: "291525424033",
+    appId: "1:291525424033:web:1168a8674c2df7b8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+</script>
+</body>
+</html>
+
+<!-- Developed by Shivang Saxena -->
